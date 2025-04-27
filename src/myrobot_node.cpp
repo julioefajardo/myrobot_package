@@ -6,7 +6,7 @@
 
 
 // Function to create a target pose for the robot's end effector 
-geometry_msgs::msg::PoseStamped create_target_pose(const std::shared_ptr<rclcpp::Node> &node, 
+geometry_msgs::msg::PoseStamped createTargetPose(const std::shared_ptr<rclcpp::Node> &node, 
   float x, float y, float z, 
   float qx, float qy, float qz, float qw) 
 {
@@ -90,8 +90,8 @@ int main(int argc, char ** argv)
   RCLCPP_INFO(logger, "Planning time: %f seconds", move_group->getPlanningTime());
   
   // Create a target poses for the robot's end effector
-  auto target_pose_1 = create_target_pose(node, -0.3, 0.0, 0.20, -0.707, 0.707, 0.0, 0.0);
-  auto target_pose_2 = create_target_pose(node, -0.133, 0.0, 0.61686, -0.5, 0.5, 0.5, -0.5);
+  auto target_pose_1 = createTargetPose(node, -0.3, 0.0, 0.20, -0.707, 0.707, 0.0, 0.0);
+  auto target_pose_2 = createTargetPose(node, -0.133, 0.0, 0.61686, -0.5, 0.5, 0.5, -0.5);
   
   // Plan a path to the target pose
   moveit::planning_interface::MoveGroupInterface::Plan plan;
